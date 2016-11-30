@@ -1,3 +1,3 @@
-# A List for dply.co - with some usefull ready to deploy solutions
+# Dply.co button collection
 
 [![golang-1.73-brightgreen](https://img.shields.io/badge/golang-1.73-brightgreen.svg)](https://dply.co/b/81MIiJG2) 
