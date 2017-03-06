@@ -1,0 +1,24 @@
+#!/bin/bash
+# Example: waitfor $(pidof -s make) 'Compiling' 'Wait until make is finished'
+
+chars=("■     " " ■    " "  ■   " "   ■  " "    ■ " "     ■" "    ■ " "   ■  " "  ■   " " ■    ")
+
+msg=""
+if [ $# -gt 1 ]; then
+    msg=" $2"
+fi
+
+displayedGreeting=0
+while kill -0 $1 2> /dev/null; do
+    if [ $# -gt 2 ] && [ $displayedGreeting -eq 0 ]; then
+        echo -e "$3"
+        displayedGreeting=1
+    fi
+    for char in "${chars[@]}"
+    do
+        echo -ne "\r${char}$msg"
+        sleep .15
+    done
+done
+
+echo ""
